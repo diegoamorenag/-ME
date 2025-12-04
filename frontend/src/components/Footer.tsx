@@ -39,7 +39,7 @@ export const Footer = () => {
               />
             </a>
             <a
-              href="mailto:contact@example.com"
+              href="mailto:diegoamorenag@gmail.com"
               className="text-muted-foreground hover:text-primary transition-colors"
               aria-label="Email"
             >
