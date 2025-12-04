@@ -1,26 +1,27 @@
 # ⭐ **Portfolio App – MVP Specification**
 
 ## 🎯 **Goal**
+
 ## FRONTEND
 
 Build a professional, modern, minimalistic portfolio website that presents:
 
-* Projects
-* Education
-* Experience
-* Tech Stack
-* Personal Introduction
-* Contact Form
+- Projects
+- Education
+- Experience
+- Tech Stack
+- Personal Introduction
+- Contact Form
 
 The site should feature smooth navigation, a clean aesthetic, and light/subtle animations.
 
 **Visual Style Guidelines**
 
-* Modern, spacious layout
-* Light or Dark Mode (optional for MVP)
-* Subtle micro-interactions
-* Limited, cohesive color palette
-* Strong, readable typography
+- Modern, spacious layout
+- Light or Dark Mode (optional for MVP)
+- Subtle micro-interactions
+- Limited, cohesive color palette
+- Strong, readable typography
 
 ---
 
@@ -30,17 +31,18 @@ The site should feature smooth navigation, a clean aesthetic, and light/subtle a
 
 **Core Elements**
 
-* Full-width hero section with:
+- Full-width hero section with:
 
-  * Name: **“Diego Amorena – Full Stack Engineer”**
-  * A short tagline, e.g.:
+  - Name: **“Diego Amorena – Full Stack Engineer”**
+  - A short tagline, e.g.:
 
     > “I build end-to-end systems with React, .NET, Python, Docker, and more.”
-* Optional profile photo/avatar
-* Primary call-to-action buttons:
 
-  * **View Projects**
-  * **Contact Me**
+- Optional profile photo/avatar
+- Primary call-to-action buttons:
+
+  - **View Projects**
+  - **Contact Me**
 
 ---
 
@@ -50,13 +52,14 @@ The site should feature smooth navigation, a clean aesthetic, and light/subtle a
 
 **Core Elements**
 
-* A short introductory paragraph
-* Key highlights:
+- A short introductory paragraph
+- Key highlights:
 
-  * Full-Stack Developer based in Montevideo, Uruguay
-  * Experience with React, .NET, Python, Docker, PostgreSQL, etc.
-  * Interests: AI/LLMs, backend systems, educational technology
-* Optional: **Download CV** button
+  - Full-Stack Developer based in Montevideo, Uruguay
+  - Experience with React, .NET, Python, Docker, PostgreSQL, etc.
+  - Interests: AI/LLMs, backend systems, educational technology
+
+- Optional: **Download CV** button
 
 ---
 
@@ -68,16 +71,16 @@ The site should feature smooth navigation, a clean aesthetic, and light/subtle a
 
 Group technologies visually (e.g., badge grid):
 
-* **Frontend:** React, JavaScript, TypeScript, HTML5, CSS3
-* **Backend:** C#, .NET, Python, Java
-* **Databases:** PostgreSQL, MySQL, MongoDB
-* **DevOps:** Docker, Git
-* **Tools:** Figma, Shell, Genexus
+- **Frontend:** React, JavaScript, TypeScript, HTML5, CSS3
+- **Backend:** C#, .NET, Python, Java
+- **Databases:** PostgreSQL, MySQL, MongoDB
+- **DevOps:** Docker, Git
+- **Tools:** Figma, Shell, Genexus
 
 **Optional Enhancements**
 
-* Hover effects
-* Category filters
+- Hover effects
+- Category filters
 
 ---
 
@@ -87,14 +90,14 @@ Group technologies visually (e.g., badge grid):
 
 **Each Project Card Includes:**
 
-* Project title
-* Short description (1–2 sentences)
-* Technology tags (React, .NET, Llama, Docker, etc.)
-* Thumbnail or placeholder image
-* Optional buttons:
+- Project title
+- Short description (1–2 sentences)
+- Technology tags (React, .NET, Llama, Docker, etc.)
+- Thumbnail or placeholder image
+- Optional buttons:
 
-  * **Live Demo**
-  * **GitHub Repo**
+  - **Live Demo**
+  - **GitHub Repo**
 
 ---
 
@@ -104,17 +107,17 @@ Group technologies visually (e.g., badge grid):
 
 **For Each Education Item:**
 
-* Institution name
-* Degree title
-* Completion or expected graduation date
-* Optional thumbnail or logo
+- Institution name
+- Degree title
+- Completion or expected graduation date
+- Optional thumbnail or logo
 
 **Current Education List**
 
-* **Computer Systems Analyst – Facultad de Ingeniería (UDELAR)**
+- **Computer Systems Analyst – Facultad de Ingeniería (UDELAR)**
   Completed 2025
 
-* **Computer Science Degree – Facultad de Ingeniería (UDELAR)**
+- **Computer Science Degree – Facultad de Ingeniería (UDELAR)**
   Expected July 2025
 
 **Optional Timeline Format**
@@ -132,10 +135,10 @@ Group technologies visually (e.g., badge grid):
 
 **For Each Role:**
 
-* Company name
-* Position
-* Dates
-* Bullet points outlining responsibilities and key achievements
+- Company name
+- Position
+- Dates
+- Bullet points outlining responsibilities and key achievements
 
 Use **generic components** so items can be reused or scaled.
 
@@ -147,21 +150,21 @@ Use **generic components** so items can be reused or scaled.
 
 **Core Fields**
 
-* Name
-* Email
-* Message
-* Submit button
+- Name
+- Email
+- Message
+- Submit button
 
 **Behavior**
 
-* Basic validation
-* Sends data through:
+- Basic validation
+- Sends data through:
 
-  * EmailJS, Resend, Formspree, or a custom API
+  - EmailJS, Resend, Formspree, or a custom API
 
 **Optional**
 
-* Social icons (GitHub, LinkedIn)
+- Social icons (GitHub, LinkedIn)
 
 ---
 
@@ -169,33 +172,34 @@ Use **generic components** so items can be reused or scaled.
 
 **Structure**
 
-* Home
+- Home
 
-  * Includes hero, About Me, and Tech Stack
-* Projects
-* Education
-* Experience
-* Contact
+  - Includes hero, About Me, and Tech Stack
+
+- Projects
+- Education
+- Experience
+- Contact
 
 **Visual Behavior**
 
-* Sticky on scroll
-* Slight blur or translucency effect
+- Sticky on scroll
+- Slight blur or translucency effect
 
 ---
 
 # 🎨 **9. Visual Standards (MVP)**
 
-* Rounded corners (8–12px)
-* Soft transitions on hover
-* Soft neutral palette + one accent color (e.g., **#6366F1 Indigo**)
-* Font pairing: **Inter + Space Grotesk**
+- Rounded corners (8–12px)
+- Soft transitions on hover
+- Soft neutral palette + one accent color (e.g., **#6366F1 Indigo**)
+- Font pairing: **Inter + Space Grotesk**
 
 ---
 
 # 📦 **10. Implementation Stack (React)**
 
-* React + Yarn
-* Tailwind CSS
-* Framer Motion (animations)
-* Shadcn UI (component library)
+- React + pnpm
+- Tailwind CSS
+- Framer Motion (animations)
+- Shadcn UI (component library)

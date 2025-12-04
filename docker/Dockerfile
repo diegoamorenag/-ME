@@ -7,7 +7,7 @@ WORKDIR /app
 
 # Copy package files
 COPY frontend/package*.json ./
-COPY frontend/yarn.lock* frontend/pnpm-lock.yaml* ./
+
 
 # Install dependencies
 # Using npm as fallback, but will work with yarn/pnpm if lock files exist
