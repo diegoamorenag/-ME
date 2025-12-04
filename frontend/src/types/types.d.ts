@@ -23,6 +23,8 @@ export interface ISkill {
 }
 
 export interface IEducation {
-  name: string;
-  image: string;
+  degree: string;
+  institution: string;
+  year: string;
+  description: string;
 }

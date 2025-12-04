@@ -1,15 +1,8 @@
-import React from "react";
 import { motion } from "framer-motion";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "../components/ui/card";
-import { GraduationCap } from "lucide-react";
-import { EducationComponent } from "../components/subcomponents/EducationComponent";
+import { EducationComponent } from "../components/subcomponents/Education";
+import { IEducation } from "../types/types";
 
-const education = [
+const education: IEducation[] = [
   {
     degree: "Computer Systems Analyst",
     institution: "Facultad de Ingeniería (UDELAR)",
@@ -43,15 +36,7 @@ export const Education = () => {
 
         <div className="max-w-3xl mx-auto space-y-8">
           {education.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <EducationComponent item={item} />
-            </motion.div>
+            <EducationComponent item={item} index={index} />
           ))}
         </div>
       </div>

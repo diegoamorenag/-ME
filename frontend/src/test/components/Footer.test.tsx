@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { Footer } from "../../pages/Footer";
+import { Footer } from "../../pages/";
 
 describe("Footer Component", () => {
   test("renders Diego Amorena name", () => {

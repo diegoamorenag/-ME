@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { ExperienceComponent } from "../components/subcomponents/ExperienceComponent copy";
+import { ExperienceComponent } from "../components/subcomponents/Experience";
+import { IExperience } from "../types/types";
 
-const experiences = [
+const experiences: IExperience[] = [
   {
     company: "Tech Solutions Inc.",
     role: "Full Stack Developer",
@@ -43,7 +44,7 @@ export const Experience = () => {
 
         <div className="max-w-3xl mx-auto space-y-8">
           {experiences.map((exp, index) => (
-            <ExperienceComponent key={index} item={exp} />
+            <ExperienceComponent index={index} exp={exp} />
           ))}
         </div>
       </div>

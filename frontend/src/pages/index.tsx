@@ -1,12 +1,13 @@
-import { About } from "./About";
-import { Contact } from "./Contact";
-import { Education } from "./Education";
-import { Experience } from "./Experience";
-import { Footer } from "./Footer";
-import { Hero } from "./Hero";
-import { Navbar } from "./Navbar";
-import { Projects } from "./Projects";
-import { TechStack } from "./TechStack";
+import { About } from "./AboutPage";
+import { Contact } from "./ContactPage";
+import { Education } from "./EducationPage";
+import { Experience } from "./ExperiencePage";
+import { Footer } from "./FooterPage";
+import { Hero } from "./HeroPage";
+import { Navbar } from "./NavbarPage";
+import { Projects } from "./ProjectsPage";
+import { Skills } from "./SkillsPage";
+import { TechStack } from "./TechStackPage";
 
 export {
   About,
@@ -17,5 +18,6 @@ export {
   Hero,
   Navbar,
   Projects,
+  Skills,
   TechStack,
 };

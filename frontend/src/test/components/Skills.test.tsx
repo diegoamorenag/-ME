@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { Skills } from "../../pages/Skills";
+import { Skills } from "../../pages/";
 
 describe("Skills Component", () => {
   test("renders Skills heading", () => {

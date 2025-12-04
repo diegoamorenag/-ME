@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { Navbar } from "../../pages/Navbar";
+import { Navbar } from "../../pages/";
 
 describe("Navbar Component", () => {
   test("renders Diego Amorena name/logo", () => {
