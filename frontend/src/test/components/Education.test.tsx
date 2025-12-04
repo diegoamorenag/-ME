@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { Education } from "../../components/Education";
+import { Education } from "../../pages/Education";
 
 describe("Education Component", () => {
   test("renders Education heading", () => {

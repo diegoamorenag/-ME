@@ -1,16 +1,22 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/card';
-import { Input } from './ui/input';
-import { Textarea } from './ui/textarea';
-import { Button } from './ui/button';
-import { Send } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "../components/ui/card";
+import { Input } from "../components/ui/input";
+import { Textarea } from "../components/ui/textarea";
+import { Button } from "../components/ui/button";
+import { Send } from "lucide-react";
 
 export const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission logic here
-    console.log('Form submitted');
+    console.log("Form submitted");
   };
 
   return (
@@ -23,7 +29,9 @@ export const Contact = () => {
           transition={{ duration: 0.5 }}
           className="mb-12 text-center"
         >
-          <h2 className="text-3xl font-bold font-space-grotesk mb-4">Get in Touch</h2>
+          <h2 className="text-3xl font-bold font-space-grotesk mb-4">
+            Get in Touch
+          </h2>
           <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
         </motion.div>
 
@@ -44,19 +52,33 @@ export const Contact = () => {
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
-                    <label htmlFor="name" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                    <label
+                      htmlFor="name"
+                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    >
                       Name
                     </label>
                     <Input id="name" placeholder="Your name" required />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                    <label
+                      htmlFor="email"
+                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    >
                       Email
                     </label>
-                    <Input id="email" type="email" placeholder="your@email.com" required />
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="your@email.com"
+                      required
+                    />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                    <label
+                      htmlFor="message"
+                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    >
                       Message
                     </label>
                     <Textarea

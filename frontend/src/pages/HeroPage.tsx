@@ -1,11 +1,14 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, Mail } from 'lucide-react';
-import { Button } from './ui/button';
+import React from "react";
+import { motion } from "framer-motion";
+import { ArrowRight, Mail } from "lucide-react";
+import { Button } from "../components/ui/button";
 
 export const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-16">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center pt-16"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -23,7 +26,8 @@ export const Hero = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mb-8">
-            Full Stack Engineer building end-to-end systems with React, .NET, Python, Docker, and more.
+            Full Stack Engineer building end-to-end systems with React, .NET,
+            Python, Docker, and more.
           </p>
         </motion.div>
 

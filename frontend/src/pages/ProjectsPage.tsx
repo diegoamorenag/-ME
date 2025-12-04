@@ -1,36 +1,46 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card';
-import { Badge } from './ui/badge';
-import { Button } from './ui/button';
-import { Github, ExternalLink } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "../components/ui/card";
+import { Badge } from "../components/ui/badge";
+import { Button } from "../components/ui/button";
+import { Github, ExternalLink } from "lucide-react";
 
 const projects = [
   {
-    title: 'Portfolio Website',
-    description: 'A modern, minimalistic portfolio website built with React, Tailwind CSS, and Framer Motion.',
-    tags: ['React', 'Tailwind CSS', 'Framer Motion'],
+    title: "Portfolio Website",
+    description:
+      "A modern, minimalistic portfolio website built with React, Tailwind CSS, and Framer Motion.",
+    tags: ["React", "Tailwind CSS", "Framer Motion"],
     links: {
-      demo: '#',
-      repo: '#',
+      demo: "#",
+      repo: "#",
     },
   },
   {
-    title: 'E-commerce Platform',
-    description: 'Full-stack e-commerce solution with real-time inventory management and secure payments.',
-    tags: ['.NET', 'React', 'SQL Server', 'Azure'],
+    title: "E-commerce Platform",
+    description:
+      "Full-stack e-commerce solution with real-time inventory management and secure payments.",
+    tags: [".NET", "React", "SQL Server", "Azure"],
     links: {
-      demo: '#',
-      repo: '#',
+      demo: "#",
+      repo: "#",
     },
   },
   {
-    title: 'AI Chat Assistant',
-    description: 'Intelligent chat interface powered by LLMs for automated customer support.',
-    tags: ['Python', 'FastAPI', 'OpenAI', 'React'],
+    title: "AI Chat Assistant",
+    description:
+      "Intelligent chat interface powered by LLMs for automated customer support.",
+    tags: ["Python", "FastAPI", "OpenAI", "React"],
     links: {
-      demo: '#',
-      repo: '#',
+      demo: "#",
+      repo: "#",
     },
   },
 ];
@@ -46,7 +56,9 @@ export const Projects = () => {
           transition={{ duration: 0.5 }}
           className="mb-12 text-center"
         >
-          <h2 className="text-3xl font-bold font-space-grotesk mb-4">Featured Projects</h2>
+          <h2 className="text-3xl font-bold font-space-grotesk mb-4">
+            Featured Projects
+          </h2>
           <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
         </motion.div>
 
@@ -74,14 +86,32 @@ export const Projects = () => {
                   </div>
                 </CardContent>
                 <CardFooter className="gap-4">
-                  <Button variant="outline" size="sm" className="w-full" asChild>
-                    <a href={project.links.demo} target="_blank" rel="noopener noreferrer">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full"
+                    asChild
+                  >
+                    <a
+                      href={project.links.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <ExternalLink className="mr-2 h-4 w-4" />
                       Live Demo
                     </a>
                   </Button>
-                  <Button variant="outline" size="sm" className="w-full" asChild>
-                    <a href={project.links.repo} target="_blank" rel="noopener noreferrer">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full"
+                    asChild
+                  >
+                    <a
+                      href={project.links.repo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <Github className="mr-2 h-4 w-4" />
                       Code
                     </a>

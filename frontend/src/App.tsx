@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import { 
+import {
   About,
   Contact,
   Education,
@@ -10,25 +10,7 @@ import {
   Navbar,
   Projects,
   TechStack,
-} from './components/';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+} from "./pages";
 
 export const App = () => {
   return (
@@ -46,4 +28,4 @@ export const App = () => {
       <Footer />
     </div>
   );
-}
+};

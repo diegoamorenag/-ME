@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { TechStack } from "../../components/TechStack";
+import { TechStack } from "../../pages/TechStack";
 
 describe("TechStack Component", () => {
   test("renders Tech Stack heading", () => {

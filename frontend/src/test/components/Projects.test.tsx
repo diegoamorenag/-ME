@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { Projects } from "../../components/Projects";
+import { Projects } from "../../pages/Projects";
 
 describe("Projects Component", () => {
   test("renders Featured Projects heading", () => {
