@@ -17,23 +17,25 @@ export const Footer = () => {
 
           <div className="flex items-center space-x-6">
             <a
-              href="#"
+              href="https://github.com/diegoamorenag"
               className="text-muted-foreground hover:text-primary transition-colors"
               aria-label="GitHub"
             >
               <Github
                 className="h-5 w-5"
                 href="https://github.com/diegoamorenag"
+                target="#"
               />
             </a>
             <a
-              href="#"
+              href="https://linkedin.com/in/diegoamorenag"
               className="text-muted-foreground hover:text-primary transition-colors"
               aria-label="LinkedIn"
             >
               <Linkedin
                 className="h-5 w-5"
                 href="https://linkedin.com/in/diegoamorenag"
+                target="#"
               />
             </a>
             <a
@@ -41,7 +43,11 @@ export const Footer = () => {
               className="text-muted-foreground hover:text-primary transition-colors"
               aria-label="Email"
             >
-              <Mail className="h-5 w-5" href="mailto:diegoamorenag@gmail.com" />
+              <Mail
+                className="h-5 w-5"
+                href="mailto:diegoamorenag@gmail.com"
+                target="#"
+              />
             </a>
           </div>
         </div>
