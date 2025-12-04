@@ -22,27 +22,27 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "18"
-          # CHANGE: Cache yarn instead of npm
-          cache: "yarn"
-          cache-dependency-path: "./frontend/yarn.lock" # Or package-lock.json if exists
+          # CHANGE: Cache pnpm instead of npm
+          cache: "pnpm"
+          cache-dependency-path: "./frontend/pnpm-lock.yaml"
 
       - name: Install dependencies
-        # CHANGE: Use yarn instead of npm ci
-        run: yarn install --frozen-lockfile
+        # CHANGE: Use pnpm instead of npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Run linter
-        # CHANGE: Use yarn instead of npm/npx
-        run: yarn lint || yarn eslint src --ext .js,.jsx,.ts,.tsx
+        # CHANGE: Use pnpm instead of npm/npx
+        run: pnpm lint || pnpm eslint src --ext .js,.jsx,.ts,.tsx
 
       - name: Run tests
-        # CHANGE: Use yarn instead of npm
-        run: yarn test --watchAll=false --passWithNoTests
+        # CHANGE: Use pnpm instead of npm
+        run: pnpm test --watchAll=false --passWithNoTests
         env:
           CI: true
 
       - name: Build project
-        # CHANGE: Use yarn instead of npm
-        run: yarn build
+        # CHANGE: Use pnpm instead of npm
+        run: pnpm build
 
       - name: Check build output
         run: |
