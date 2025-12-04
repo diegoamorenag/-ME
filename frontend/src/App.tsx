@@ -1,15 +1,36 @@
 import React from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import TechStack from './components/TechStack';
-import Projects from './components/Projects';
-import Education from './components/Education';
-import Experience from './components/Experience';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
 
-function App() {
+import { 
+  About,
+  Contact,
+  Education,
+  Experience,
+  Footer,
+  Hero,
+  Navbar,
+  Projects,
+  TechStack,
+} from './components/';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export const App = () => {
   return (
     <div className="min-h-screen bg-background font-sans antialiased text-foreground">
       <Navbar />
@@ -26,5 +47,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

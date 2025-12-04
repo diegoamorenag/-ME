@@ -26,7 +26,7 @@ const experiences = [
   },
 ];
 
-const Experience = () => {
+export const Experience = () => {
   return (
     <section id="experience" className="py-20 bg-secondary/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -82,5 +82,3 @@ const Experience = () => {
     </section>
   );
 };
-
-export default Experience;

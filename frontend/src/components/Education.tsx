@@ -18,7 +18,7 @@ const education = [
   },
 ];
 
-const Education = () => {
+export const Education = () => {
   return (
     <section id="education" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -68,5 +68,3 @@ const Education = () => {
     </section>
   );
 };
-
-export default Education;

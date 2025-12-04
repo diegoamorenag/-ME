@@ -4,7 +4,7 @@ import { Card, CardContent } from './ui/card';
 import { Download } from 'lucide-react';
 import { Button } from './ui/button';
 
-const About = () => {
+export const About = () => {
   return (
     <section id="about" className="py-20 bg-secondary/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -71,4 +71,4 @@ const About = () => {
   );
 };
 
-export default About;
+

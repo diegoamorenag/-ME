@@ -6,7 +6,7 @@ import { Textarea } from './ui/textarea';
 import { Button } from './ui/button';
 import { Send } from 'lucide-react';
 
-const Contact = () => {
+export const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission logic here
@@ -79,5 +79,3 @@ const Contact = () => {
     </section>
   );
 };
-
-export default Contact;

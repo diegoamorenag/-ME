@@ -35,7 +35,7 @@ const projects = [
   },
 ];
 
-const Projects = () => {
+export const Projects = () => {
   return (
     <section id="projects" className="py-20 bg-secondary/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

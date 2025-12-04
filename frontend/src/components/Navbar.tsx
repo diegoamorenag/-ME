@@ -3,7 +3,7 @@ import { Menu, X } from 'lucide-react';
 import { cn } from '../lib/utils';
 import { Button } from './ui/button';
 
-const Navbar = () => {
+export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -87,5 +87,3 @@ const Navbar = () => {
     </nav>
   );
 };
-
-export default Navbar;

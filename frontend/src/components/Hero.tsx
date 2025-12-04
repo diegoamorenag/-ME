@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Mail } from 'lucide-react';
 import { Button } from './ui/button';
 
-const Hero = () => {
+export const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center pt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
@@ -50,5 +50,3 @@ const Hero = () => {
     </section>
   );
 };
-
-export default Hero;

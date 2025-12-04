@@ -21,8 +21,7 @@ const techCategories = [
     skills: ['Docker', 'Git', 'Figma', 'Shell', 'Genexus'],
   },
 ];
-
-const TechStack = () => {
+export const TechStack = () => {
   return (
     <section className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -67,5 +66,3 @@ const TechStack = () => {
     </section>
   );
 };
-
-export default TechStack;
