@@ -1,0 +1,49 @@
+# .github/workflows/enforce-gitflow.yml
+name: Enforce Git Flow
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  validate-merge-target:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate Git Flow rules
+        run: |
+          SOURCE="${{ github.head_ref }}"
+          TARGET="${{ github.base_ref }}"
+
+          echo "PR: $SOURCE → $TARGET"
+
+          # Define allowed merge paths
+          case "$SOURCE" in
+            feature/*|bugfix/*)
+              if [[ "$TARGET" != "develop" ]]; then
+                echo "❌ feature/* and bugfix/* branches must merge into develop"
+                exit 1
+              fi
+              ;;
+            release/*)
+              if [[ "$TARGET" != "main" && "$TARGET" != "develop" ]]; then
+                echo "❌ release/* branches must merge into main or develop"
+                exit 1
+              fi
+              ;;
+            hotfix/*)
+              if [[ "$TARGET" != "main" && "$TARGET" != "develop" ]]; then
+                echo "❌ hotfix/* branches must merge into main or develop"
+                exit 1
+              fi
+              ;;
+            develop)
+              echo "❌ develop should not be merged directly"
+              exit 1
+              ;;
+            *)
+              echo "❌ Unknown branch type: $SOURCE"
+              exit 1
+              ;;
+          esac
+
+          echo "✅ Valid Git Flow merge path"

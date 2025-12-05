@@ -1,0 +1,25 @@
+# .github/workflows/branch-naming.yml
+name: Enforce Branch Naming
+
+on:
+  push:
+    branches-ignore:
+      - main
+      - develop
+
+jobs:
+  check-branch-name:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check branch name
+        run: |
+          BRANCH=${GITHUB_REF#refs/heads/}
+          PATTERN="^(feature|bugfix|hotfix|release)\/[a-z0-9._-]+$"
+
+          if [[ ! "$BRANCH" =~ $PATTERN ]]; then
+            echo "❌ Invalid branch name: $BRANCH"
+            echo "Branch must match pattern: feature/*, bugfix/*, hotfix/*, release/*"
+            exit 1
+          fi
+
+          echo "✅ Branch name is valid: $BRANCH"
