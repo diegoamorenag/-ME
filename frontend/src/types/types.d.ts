@@ -1,5 +1,6 @@
 export interface IExperience {
   company: string;
+  companyUrl: string;
   role: string;
   period: string;
   description: string[];
