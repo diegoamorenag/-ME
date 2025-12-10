@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, MessageCircle } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -19,34 +19,35 @@ export const Footer = () => {
               href="https://github.com/diegoamorenag"
               className="text-muted-foreground hover:text-primary transition-colors"
               aria-label="GitHub"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <Github
-                className="h-5 w-5"
-                href="https://github.com/diegoamorenag"
-                target="#"
-              />
+              <Github className="h-5 w-5" />
             </a>
             <a
-              href="https://linkedin.com/in/diegoamorenag"
+              href="https://www.linkedin.com/in/diegoamorena"
               className="text-muted-foreground hover:text-primary transition-colors"
               aria-label="LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <Linkedin
-                className="h-5 w-5"
-                href="https://linkedin.com/in/diegoamorenag"
-                target="#"
-              />
+              <Linkedin className="h-5 w-5" />
             </a>
             <a
-              href="mailto:diegoamorenag@gmail.com"
+              href="mailto:amorenadiegog@gmail.com"
               className="text-muted-foreground hover:text-primary transition-colors"
               aria-label="Email"
             >
-              <Mail
-                className="h-5 w-5"
-                href="mailto:diegoamorenag@gmail.com"
-                target="#"
-              />
+              <Mail className="h-5 w-5" />
+            </a>
+            <a
+              href="https://wa.me/59891036039"
+              className="text-muted-foreground hover:text-primary transition-colors"
+              aria-label="WhatsApp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <MessageCircle className="h-5 w-5" />
             </a>
           </div>
         </div>
