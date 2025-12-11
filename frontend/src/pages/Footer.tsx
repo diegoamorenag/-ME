@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, MessageCircle } from "lucide-react";
+import { Github, Linkedin, Mail, MessageCircle, Gitlab } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -23,6 +23,24 @@ export const Footer = () => {
               rel="noopener noreferrer"
             >
               <Github className="h-5 w-5" />
+            </a>
+            <a
+              href="https://github.com/DiegoAmorena"
+              className="text-muted-foreground hover:text-primary transition-colors"
+              aria-label="GitHub"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Github className="h-5 w-5" />
+            </a>
+            <a
+              href="https://gitlab.fing.edu.uy/diego.amorena"
+              className="text-muted-foreground hover:text-primary transition-colors"
+              aria-label="GitLab"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Gitlab className="h-5 w-5" />
             </a>
             <a
               href="https://www.linkedin.com/in/diegoamorena"

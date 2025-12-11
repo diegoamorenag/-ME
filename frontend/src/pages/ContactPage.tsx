@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
 import {
   Card,
   CardContent,
@@ -10,14 +11,77 @@ import {
 import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
 import { Button } from "../components/ui/button";
-import { Send } from "lucide-react";
+import { Send, Loader2, CheckCircle, AlertCircle } from "lucide-react";
 
-export const Contact = () => {
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission logic here
-    console.log("Form submitted");
+export const ContactPage = () => {
+  const formRef = useRef<HTMLFormElement>(null);
+  const [status, setStatus] = useState<RequestStatus>("idle");
+  const [errorMessage, setErrorMessage] = useState<string>("");
+  const [formData, setFormData] = useState<IFormData>({
+    from_name: "",
+    from_email: "",
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!formRef.current) return;
+    // Validate configuration
+
+    if (
+      !(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID &&
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID &&
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+      )
+    ) {
+      setStatus("error");
+      setErrorMessage(
+        "EmailJS is not configured. Please update the configuration in Contact.tsx"
+      );
+      return;
+    }
+
+    setStatus("loading");
+    setErrorMessage("");
+
+    try {
+      console.log("try");
+
+      const result = await emailjs.sendForm(
+        String(process.env.REACT_APP_EMAILJS_SERVICE_ID),
+        String(process.env.REACT_APP_EMAILJS_TEMPLATE_ID),
+        String(formRef.current),
+        String(process.env.REACT_APP_EMAILJS_PUBLIC_KEY)
+      );
+      console.log("result", result);
+
+      if (result.status === 200) {
+        setStatus("success");
+        setFormData({ from_name: "", from_email: "", message: "" });
+
+        // Reset to idle after 5 seconds
+        setTimeout(() => setStatus("idle"), 5000);
+      }
+    } catch (error) {
+      setStatus("error");
+      if (error instanceof Error) {
+        setErrorMessage(error.message);
+      } else {
+        setErrorMessage("Failed to send message. Please try again later.");
+      }
+    }
+  };
+
+  const isLoading = status === "loading";
 
   return (
     <section id="contact" className="py-20">
@@ -50,27 +114,87 @@ export const Contact = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Success Message */}
+                {status === "success" && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="mb-6 p-4 bg-green-50 dark:bg-green-950 border border-green-200 dark:border-green-800 rounded-lg flex items-center gap-3"
+                  >
+                    <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0" />
+                    <div>
+                      <p className="font-medium text-green-800 dark:text-green-200">
+                        Message sent successfully!
+                      </p>
+                      <p className="text-sm text-green-600 dark:text-green-400">
+                        I'll get back to you as soon as possible.
+                      </p>
+                    </div>
+                  </motion.div>
+                )}
+
+                {/* Error Message */}
+                {status === "error" && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="mb-6 p-4 bg-red-50 dark:bg-red-950 border border-red-200 dark:border-red-800 rounded-lg flex items-start gap-3"
+                  >
+                    <AlertCircle className="h-5 w-5 text-red-600 dark:text-red-400 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-medium text-red-800 dark:text-red-200">
+                        Failed to send message
+                      </p>
+                      <p className="text-sm text-red-600 dark:text-red-400">
+                        {errorMessage}
+                      </p>
+                      <button
+                        onClick={() => setStatus("idle")}
+                        className="text-sm text-red-700 dark:text-red-300 underline mt-1 hover:no-underline"
+                      >
+                        Try again
+                      </button>
+                    </div>
+                  </motion.div>
+                )}
+
+                <form
+                  ref={formRef}
+                  onSubmit={handleSubmit}
+                  className="space-y-6"
+                >
                   <div className="space-y-2">
                     <label
-                      htmlFor="name"
+                      htmlFor="from_name"
                       className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                     >
                       Name
                     </label>
-                    <Input id="name" placeholder="Your name" required />
+                    <Input
+                      id="from_name"
+                      name="from_name"
+                      placeholder="Your name"
+                      value={formData.from_name}
+                      onChange={handleChange}
+                      disabled={isLoading}
+                      required
+                    />
                   </div>
                   <div className="space-y-2">
                     <label
-                      htmlFor="email"
+                      htmlFor="from_email"
                       className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                     >
                       Email
                     </label>
                     <Input
-                      id="email"
+                      id="from_email"
+                      name="from_email"
                       type="email"
                       placeholder="your@email.com"
+                      value={formData.from_email}
+                      onChange={handleChange}
+                      disabled={isLoading}
                       required
                     />
                   </div>
@@ -83,14 +207,27 @@ export const Contact = () => {
                     </label>
                     <Textarea
                       id="message"
+                      name="message"
                       placeholder="Your message..."
                       className="min-h-[120px]"
+                      value={formData.message}
+                      onChange={handleChange}
+                      disabled={isLoading}
                       required
                     />
                   </div>
-                  <Button type="submit" className="w-full">
-                    <Send className="mr-2 h-4 w-4" />
-                    Send Message
+                  <Button type="submit" className="w-full" disabled={isLoading}>
+                    {isLoading ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="mr-2 h-4 w-4" />
+                        Send Message
+                      </>
+                    )}
                   </Button>
                 </form>
               </CardContent>

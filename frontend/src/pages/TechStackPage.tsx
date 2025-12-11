@@ -33,7 +33,7 @@ const techCategories = [
     skills: ["Docker", "Git", "Figma", "Shell", "Genexus"],
   },
 ];
-export const TechStack = () => {
+export const TechStackPage = () => {
   return (
     <section id="tech-stack" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

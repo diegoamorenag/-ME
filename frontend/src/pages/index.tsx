@@ -1,23 +1,23 @@
-import { About } from "./AboutPage";
-import { Contact } from "./ContactPage";
-import { Education } from "./EducationPage";
-import { Experience } from "./ExperiencePage";
-import { Footer } from "./FooterPage";
-import { Hero } from "./HeroPage";
-import { Navbar } from "./NavbarPage";
-import { Projects } from "./ProjectsPage";
-import { Skills } from "./SkillsPage";
-import { TechStack } from "./TechStackPage";
+import { AboutPage } from "./AboutPage";
+import { ContactPage } from "./ContactPage";
+import { EducationPage } from "./EducationPage";
+import { ExperiencePage } from "./ExperiencePage";
+import { Footer } from "./Footer";
+import { HeroPage } from "./HeroPage";
+import { Navbar } from "./Navbar";
+import { ProjectsPage } from "./ProjectsPage";
+import { SkillsPage } from "./SkillsPage";
+import { TechStackPage } from "./TechStackPage";
 
 export {
-  About,
-  Contact,
-  Education,
-  Experience,
+  AboutPage,
+  ContactPage,
+  EducationPage,
+  ExperiencePage,
   Footer,
-  Hero,
+  HeroPage,
   Navbar,
-  Projects,
-  Skills,
-  TechStack,
+  ProjectsPage,
+  SkillsPage,
+  TechStackPage,
 };

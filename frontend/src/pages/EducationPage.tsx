@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { EducationComponent } from "../components/subcomponents/Education";
-import { IEducation } from "../types/types";
 
 const education: IEducation[] = [
   {
@@ -17,7 +16,7 @@ const education: IEducation[] = [
   },
 ];
 
-export const Education = () => {
+export const EducationPage = () => {
   return (
     <section id="education" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,7 +35,7 @@ export const Education = () => {
 
         <div className="max-w-3xl mx-auto space-y-8">
           {education.map((item, index) => (
-            <EducationComponent item={item} index={index} />
+            <EducationComponent item={item} key={index} index={index} />
           ))}
         </div>
       </div>

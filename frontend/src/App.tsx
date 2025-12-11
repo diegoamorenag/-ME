@@ -1,13 +1,13 @@
 import {
-  About,
-  Contact,
-  Education,
-  Experience,
+  AboutPage,
+  ContactPage,
+  EducationPage,
+  ExperiencePage,
   Footer,
-  Hero,
+  HeroPage,
   Navbar,
-  Projects,
-  TechStack,
+  ProjectsPage,
+  TechStackPage,
 } from "./pages";
 
 export const App = () => {
@@ -15,13 +15,13 @@ export const App = () => {
     <div className="min-h-screen bg-background font-sans antialiased text-foreground">
       <Navbar />
       <main>
-        <Hero />
-        <About />
-        <TechStack />
-        <Projects />
-        <Education />
-        <Experience />
-        <Contact />
+        <HeroPage />
+        <AboutPage />
+        <TechStackPage />
+        <ProjectsPage />
+        <EducationPage />
+        <ExperiencePage />
+        <ContactPage />
       </main>
       <Footer />
     </div>

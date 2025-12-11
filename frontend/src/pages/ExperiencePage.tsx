@@ -24,7 +24,7 @@ const experiences: IExperience[] = [
   },
 ];
 
-export const Experience = () => {
+export const ExperiencePage = () => {
   return (
     <section id="experience" className="py-20 bg-secondary/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,7 +43,7 @@ export const Experience = () => {
 
         <div className="max-w-3xl mx-auto space-y-8">
           {experiences.map((exp, index) => (
-            <ExperienceComponent index={index} exp={exp} />
+            <ExperienceComponent index={index} key={index} exp={exp} />
           ))}
         </div>
       </div>
