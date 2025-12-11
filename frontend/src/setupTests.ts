@@ -11,7 +11,33 @@ jest.mock("framer-motion", () => ({
         // Return a component that renders its children
         const Component = ({ children, ...props }: any) => {
           const React = require("react");
-          return React.createElement(prop as string, props, children);
+          // Filter out Framer Motion specific props
+          const {
+            initial,
+            animate,
+            exit,
+            transition,
+            variants,
+            whileHover,
+            whileTap,
+            whileFocus,
+            whileDrag,
+            whileInView,
+            viewport,
+            onAnimationStart,
+            onAnimationComplete,
+            layout,
+            layoutId,
+            drag,
+            dragConstraints,
+            dragElastic,
+            dragMomentum,
+            onDrag,
+            onDragStart,
+            onDragEnd,
+            ...domProps
+          } = props;
+          return React.createElement(prop as string, domProps, children);
         };
         Component.displayName = `motion.${String(prop)}`;
         return Component;
