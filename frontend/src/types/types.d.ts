@@ -32,9 +32,11 @@ declare interface IEducation {
 
 declare type RequestStatus = "idle" | "loading" | "success" | "error";
 declare interface IFormData {
-  from_name: string;
-  from_email: string;
+  title: string;
+  name: string;
+  email: string;
   message: string;
+  time: string;
 }
 
 declare module "*.pdf" {

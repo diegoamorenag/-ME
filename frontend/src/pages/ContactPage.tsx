@@ -18,9 +18,15 @@ export const ContactPage = () => {
   const [status, setStatus] = useState<RequestStatus>("idle");
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [formData, setFormData] = useState<IFormData>({
-    from_name: "",
-    from_email: "",
+    title: "",
+    name: "",
+    email: "",
     message: "",
+    time: new Date().toLocaleTimeString("en-US", {
+      hour12: false,
+      hour: "2-digit",
+      minute: "2-digit",
+    }),
   });
 
   const handleChange = (
@@ -53,20 +59,34 @@ export const ContactPage = () => {
     setStatus("loading");
     setErrorMessage("");
 
-    try {
-      console.log("try");
+    // Update time to current timestamp before sending
+    const currentTime = new Date().toLocaleTimeString("en-US", {
+      hour12: false,
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+    setFormData((prev) => ({ ...prev, time: currentTime }));
 
+    try {
       const result = await emailjs.sendForm(
         String(process.env.REACT_APP_EMAILJS_SERVICE_ID),
         String(process.env.REACT_APP_EMAILJS_TEMPLATE_ID),
-        String(formRef.current),
+        formRef.current,
         String(process.env.REACT_APP_EMAILJS_PUBLIC_KEY)
       );
-      console.log("result", result);
-
       if (result.status === 200) {
         setStatus("success");
-        setFormData({ from_name: "", from_email: "", message: "" });
+        setFormData({
+          title: "",
+          name: "",
+          email: "",
+          message: "",
+          time: new Date().toLocaleTimeString("en-US", {
+            hour12: false,
+            hour: "2-digit",
+            minute: "2-digit",
+          }),
+        });
 
         // Reset to idle after 5 seconds
         setTimeout(() => setStatus("idle"), 5000);
@@ -165,16 +185,16 @@ export const ContactPage = () => {
                 >
                   <div className="space-y-2">
                     <label
-                      htmlFor="from_name"
+                      htmlFor="title"
                       className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                     >
-                      Name
+                      Subject
                     </label>
                     <Input
-                      id="from_name"
-                      name="from_name"
-                      placeholder="Your name"
-                      value={formData.from_name}
+                      id="title"
+                      name="title"
+                      placeholder="Subject of your message"
+                      value={formData.title}
                       onChange={handleChange}
                       disabled={isLoading}
                       required
@@ -182,17 +202,34 @@ export const ContactPage = () => {
                   </div>
                   <div className="space-y-2">
                     <label
-                      htmlFor="from_email"
+                      htmlFor="name"
+                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    >
+                      Name
+                    </label>
+                    <Input
+                      id="name"
+                      name="name"
+                      placeholder="Your name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      disabled={isLoading}
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label
+                      htmlFor="email"
                       className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                     >
                       Email
                     </label>
                     <Input
-                      id="from_email"
-                      name="from_email"
+                      id="email"
+                      name="email"
                       type="email"
                       placeholder="your@email.com"
-                      value={formData.from_email}
+                      value={formData.email}
                       onChange={handleChange}
                       disabled={isLoading}
                       required
@@ -216,6 +253,8 @@ export const ContactPage = () => {
                       required
                     />
                   </div>
+                  {/* Hidden time field - auto-populated on submit */}
+                  <input type="hidden" name="time" value={formData.time} />
                   <Button type="submit" className="w-full" disabled={isLoading}>
                     {isLoading ? (
                       <>

@@ -4,6 +4,7 @@ import { Download } from "lucide-react";
 import { Button } from "../components/ui/button";
 import ResumeDiegoAmorena from "../assets/CVs/ResumeDiegoAmorena.pdf";
 import CurriculumDiegoAmorena from "../assets/CVs/CurriculumnDiegoAmorena.pdf";
+
 export const AboutPage = () => {
   const handleDownloadResume = () => {
     const link = document.createElement("a");
@@ -12,7 +13,6 @@ export const AboutPage = () => {
     link.click();
   };
   const handleDownloadCurriculum = () => {
-    console.log(CurriculumDiegoAmorena);
     const link = document.createElement("a");
 
     link.href = CurriculumDiegoAmorena;
