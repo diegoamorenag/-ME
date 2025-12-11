@@ -17,5 +17,12 @@
     "jsx": "react-jsx",
     "typeRoots": ["./types"]
   },
-  "include": ["src/**/*", "types/**/*.d.ts"]
+  "include": ["src/**/*", "types/**/*.d.ts"],
+  "exclude": [
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx",
+    "src/**/*.spec.ts",
+    "src/**/*.spec.tsx",
+    "src/setupTests.ts"
+  ]
 }

@@ -20,7 +20,7 @@ describe("About Component", () => {
 
   test("renders Download CV button", () => {
     render(<AboutPage />);
-    expect(screen.getByText("Download CV")).toBeInTheDocument();
+    expect(screen.getByText("Descargar Curriculum")).toBeInTheDocument();
   });
 
   test("has correct section id", () => {

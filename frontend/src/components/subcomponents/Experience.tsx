@@ -1,7 +1,6 @@
 import { Briefcase } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { motion } from "framer-motion";
-import { IExperience } from "../../types/types";
 
 export const ExperienceComponent = ({
   exp,
