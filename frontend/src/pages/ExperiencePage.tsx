@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { ExperienceComponent } from "../components/subcomponents/Experience";
-import { IExperience } from "../types/types";
 
 const experiences: IExperience[] = [
   {
