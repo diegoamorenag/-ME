@@ -193,7 +193,7 @@ export const ContactPage = () => {
                     <Input
                       id="title"
                       name="title"
-                      placeholder="Subject of your message"
+                      placeholder="Subject"
                       value={formData.title}
                       onChange={handleChange}
                       disabled={isLoading}
@@ -245,7 +245,7 @@ export const ContactPage = () => {
                     <Textarea
                       id="message"
                       name="message"
-                      placeholder="Your message..."
+                      placeholder="message"
                       className="min-h-[120px]"
                       value={formData.message}
                       onChange={handleChange}
