@@ -1,30 +1,45 @@
-export interface IExperience {
+declare interface IExperience {
   company: string;
+  companyUrl: string;
   role: string;
   period: string;
   description: string[];
 }
 
-export interface IProject {
+declare interface IProject {
   name: string;
   description: string;
   image: string;
   link: string;
 }
 
-export interface ITechStack {
+declare interface ITechStack {
   name: string;
   image: string;
 }
 
-export interface ISkill {
+declare interface ISkill {
   name: string;
   image: string;
 }
 
-export interface IEducation {
+declare interface IEducation {
   degree: string;
   institution: string;
   year: string;
   description: string;
+}
+
+declare type RequestStatus = "idle" | "loading" | "success" | "error";
+declare interface IFormData {
+  title: string;
+  name: string;
+  email: string;
+  message: string;
+  time: string;
+}
+
+declare module "*.pdf" {
+  const src: string;
+  export default src;
 }

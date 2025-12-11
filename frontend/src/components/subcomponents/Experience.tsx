@@ -1,7 +1,6 @@
 import { Briefcase } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { motion } from "framer-motion";
-import { IExperience } from "../../types/types";
 
 export const ExperienceComponent = ({
   exp,
@@ -27,7 +26,18 @@ export const ExperienceComponent = ({
             <div className="flex justify-between items-start">
               <div>
                 <CardTitle className="text-xl">{exp.role}</CardTitle>
-                <p className="text-primary font-medium">{exp.company}</p>
+                {exp.companyUrl ? (
+                  <a
+                    href={exp.companyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary font-medium hover:underline inline-flex items-center gap-1"
+                  >
+                    {exp.company}
+                  </a>
+                ) : (
+                  <p className="text-primary font-medium">{exp.company}</p>
+                )}
               </div>
               <span className="inline-block px-3 py-1 bg-secondary rounded-full text-sm font-medium whitespace-nowrap ml-4">
                 {exp.period}

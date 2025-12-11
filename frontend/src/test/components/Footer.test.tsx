@@ -26,7 +26,7 @@ describe("Footer Component", () => {
   test("renders LinkedIn link", () => {
     const { container } = render(<Footer />);
     const linkedinLink = container.querySelector(
-      'a[href="https://linkedin.com/in/diegoamorenag"]'
+      'a[href="https://www.linkedin.com/in/diegoamorena"]'
     );
     expect(linkedinLink).toBeInTheDocument();
   });
@@ -34,9 +34,17 @@ describe("Footer Component", () => {
   test("renders Email link", () => {
     const { container } = render(<Footer />);
     const emailLink = container.querySelector(
-      'a[href="mailto:diegoamorenag@gmail.com"]'
+      'a[href="mailto:amorenadiegog@gmail.com"]'
     );
     expect(emailLink).toBeInTheDocument();
+  });
+
+  test("renders WhatsApp link", () => {
+    const { container } = render(<Footer />);
+    const whatsappLink = container.querySelector(
+      'a[href="https://wa.me/59891036039"]'
+    );
+    expect(whatsappLink).toBeInTheDocument();
   });
 
   test("renders as footer element", () => {

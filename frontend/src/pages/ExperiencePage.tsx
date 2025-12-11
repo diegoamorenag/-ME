@@ -1,31 +1,29 @@
 import { motion } from "framer-motion";
 import { ExperienceComponent } from "../components/subcomponents/Experience";
-import { IExperience } from "../types/types";
 
 const experiences: IExperience[] = [
   {
-    company: "Tech Solutions Inc.",
-    role: "Full Stack Developer",
-    period: "2023 - Present",
+    company: "Sinapsis Especialistas TI",
+    companyUrl: "https://www.sinapsis.com.uy/",
+    role: "Full-stack Developer",
+    period: "2024 March - 2025 July",
     description: [
-      "Developed and maintained scalable web applications using React and .NET.",
-      "Implemented CI/CD pipelines using Docker and GitHub Actions.",
-      "Collaborated with cross-functional teams to deliver high-quality software.",
+      "Web Banking portal adapted so that SMEs can access loans through BROU.NET, MVC Pattern.",
     ],
   },
   {
-    company: "Digital Innovations",
-    role: "Junior Developer",
-    period: "2021 - 2023",
+    company: "Intermedia / Sinapsis Especialistas TI",
+    companyUrl: "https://intermediasoftware.com/",
+    role: "Full-stack Developer",
+    period: "2022 May - 2023 September",
     description: [
-      "Assisted in the development of frontend components using React.",
-      "Participated in code reviews and agile ceremonies.",
-      "Optimized database queries for improved performance.",
+      "HCM (Human Capital Management) project where employees could access other employees' profiles, request leave, find out more about projects in which the company is involved, and employee assignments.",
+      "Development of a web system with regulations for managing patients in hospitals in compliance with ADA (Americans with Disabilities Act) requirements. Direct contact with US customers in English. Frontend development using JavaScript, CSS, backend with .NET and Microsoft SQL Server.",
     ],
   },
 ];
 
-export const Experience = () => {
+export const ExperiencePage = () => {
   return (
     <section id="experience" className="py-20 bg-secondary/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -44,7 +42,7 @@ export const Experience = () => {
 
         <div className="max-w-3xl mx-auto space-y-8">
           {experiences.map((exp, index) => (
-            <ExperienceComponent index={index} exp={exp} />
+            <ExperienceComponent index={index} key={index} exp={exp} />
           ))}
         </div>
       </div>

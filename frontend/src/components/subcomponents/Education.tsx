@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { IEducation } from "../../types/types";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { GraduationCap } from "lucide-react";
 

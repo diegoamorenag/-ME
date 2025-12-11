@@ -2,8 +2,24 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "../components/ui/card";
 import { Download } from "lucide-react";
 import { Button } from "../components/ui/button";
+import ResumeDiegoAmorena from "../assets/CVs/ResumeDiegoAmorena.pdf";
+import CurriculumDiegoAmorena from "../assets/CVs/CurriculumnDiegoAmorena.pdf";
 
-export const About = () => {
+export const AboutPage = () => {
+  const handleDownloadResume = () => {
+    const link = document.createElement("a");
+    link.href = ResumeDiegoAmorena;
+    link.download = "ResumeDiegoAmorena.pdf";
+    link.click();
+  };
+  const handleDownloadCurriculum = () => {
+    const link = document.createElement("a");
+
+    link.href = CurriculumDiegoAmorena;
+    link.download = "CurriculumDiegoAmorena.pdf";
+    link.click();
+  };
+
   return (
     <section id="about" className="py-20 bg-secondary/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,9 +56,19 @@ export const About = () => {
                 leverage technology to solve real-world problems.
               </p>
               <div className="flex flex-wrap gap-4 mt-8">
-                <Button variant="outline" className="gap-2">
-                  <Download className="h-4 w-4" />
-                  Download CV
+                <Button
+                  variant="outline"
+                  onClick={handleDownloadResume}
+                  className="gap-2"
+                >
+                  <Download className="h-4 w-4" /> Download Resume
+                </Button>
+                <Button
+                  variant="outline"
+                  onClick={handleDownloadCurriculum}
+                  className="gap-2"
+                >
+                  <Download className="h-4 w-4" /> Descargar Curriculum
                 </Button>
               </div>
             </div>

@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import {
   Card,
@@ -14,38 +13,36 @@ import { Github, ExternalLink } from "lucide-react";
 
 const projects = [
   {
-    title: "Portfolio Website",
+    title: "Software Engineering Project - CEMAU",
     description:
-      "A modern, minimalistic portfolio website built with React, Tailwind CSS, and Framer Motion.",
-    tags: ["React", "Tailwind CSS", "Framer Motion"],
+      "Semester-long development project designing and developing video games for CEMAU, an organization supporting adults with learning difficulties. Implemented a statistics system to monitor user progress with API and database using Ruby on Rails. Project carried out with monitoring and support from XMartlabs.",
+    tags: ["Ruby on Rails", "Video Games", "API", "Database", "Statistics"],
     links: {
-      demo: "#",
-      repo: "#",
+      demo: "https://cemau.xmartlabs.com/",
+      repo: "https://cemau.org/",
     },
   },
   {
-    title: "E-commerce Platform",
+    title: "Generative Artificial Intelligence - OpenFing Chat",
     description:
-      "Full-stack e-commerce solution with real-time inventory management and secure payments.",
-    tags: [".NET", "React", "SQL Server", "Azure"],
+      "Conversational AI project based on Open Fing classes specializing in text generation. Integrates Retrieval-Augmented Generation (RAG) techniques for improved accuracy and relevance, LangChain for orchestration of conversational flows, and Whisper for automatic speech recognition (ASR). Implementation includes prompt engineering, model fine-tuning, optimization, and deployment in scalable environments with efficient computational resource management.",
+    tags: [
+      "RAG",
+      "LangChain",
+      "Whisper",
+      "ASR",
+      "Python",
+      "LLM",
+      "Prompt Engineering",
+    ],
     links: {
-      demo: "#",
-      repo: "#",
-    },
-  },
-  {
-    title: "AI Chat Assistant",
-    description:
-      "Intelligent chat interface powered by LLMs for automated customer support.",
-    tags: ["Python", "FastAPI", "OpenAI", "React"],
-    links: {
-      demo: "#",
-      repo: "#",
+      demo: "https://openfingchat.duckdns.org/",
+      repo: "https://open.fing.edu.uy/",
     },
   },
 ];
 
-export const Projects = () => {
+export const ProjectsPage = () => {
   return (
     <section id="projects" className="py-20 bg-secondary/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -125,5 +122,3 @@ export const Projects = () => {
     </section>
   );
 };
-
-export default Projects;
